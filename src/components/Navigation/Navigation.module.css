@@ -1,0 +1,25 @@
+.container {
+  padding: 1rem;
+  background-color: #1f2937;
+  color: #fff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    box-sizing: border-box;
+}
+.list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+.link {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+.active {
+  color: #fcd34d;
+  font-weight: bold;
+}
+.hover:hover {
+  color: #fcd34d;
+}

@@ -1,0 +1,128 @@
+.pageContainer {
+  padding: 1.5rem;
+  background-color: #111827;
+  min-height: 100vh;
+}
+
+.backLink {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #fcd34d;
+  color: #1f2937;
+  border-radius: 0.5rem;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 0;
+  left: 50px;
+}
+
+.backLink:hover {
+  background-color: #f59e0b;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: #1f2937;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  gap: 1.5rem;
+  padding-top: 50px;
+  position: relative;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.image {
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 24rem;
+}
+
+.content {
+  color: #fff;
+  width: 100%;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  font-size: 1.125rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.overviewHeading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.overviewText {
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+.genresHeading {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.genresText {
+  color: #d1d5db;
+}
+
+.separator {
+  margin: 1.5rem 0;
+  border-color: #4b5563;
+}
+
+.navContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.navLink {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLinkActive {
+  background-color: #fcd34d;
+  color: #1f2937;
+}
+
+.navLinkInactive {
+  background-color: #374151;
+  color: #fff;
+}
+
+.navLinkInactive:hover {
+  background-color: #fcd34d;
+  color: #1f2937;
+}

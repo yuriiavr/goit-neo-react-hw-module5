@@ -1,0 +1,35 @@
+.container {
+  padding: 1.5rem;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+
+.item {
+  background-color: #374151;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.author {
+  font-weight: bold;
+  font-size: 1.125rem;
+  color: #fff;
+}
+
+.content {
+  color: #d1d5db;
+  margin-top: 0.5rem;
+}

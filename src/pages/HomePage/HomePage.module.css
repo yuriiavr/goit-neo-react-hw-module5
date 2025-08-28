@@ -1,0 +1,13 @@
+.container {
+  padding: 1.5rem;
+  background-color: #111827;
+  min-height: 100vh;
+}
+
+.heading {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
