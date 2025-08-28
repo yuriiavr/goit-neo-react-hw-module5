@@ -4,7 +4,7 @@ import axios from "axios";
 import Navigation from "./components/Navigation/Navigation";
 import Loader from "./components/Loader/Loader";
 
-export const API_KEY = import.meta.env.API_KEY; 
+export const API_KEY = import.meta.env.VITE_API_KEY;
 export const BASE_URL = "https://api.themoviedb.org/3";
 export const IMAGE_URL = "https://image.tmdb.org/t/p/w500";
 
