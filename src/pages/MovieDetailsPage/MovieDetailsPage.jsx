@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, Suspense, lazy } from "react";
-import { useParams, useLocation, Link, NavLink, Outlet, Routes, Route } from "react-router-dom";
+import { useParams, useLocation, Link, NavLink, Outlet, Routes, Route, useMatch } from "react-router-dom";
 import { axiosInstance, IMAGE_URL } from "../../App";
 import css from "./MovieDetailsPage.module.css";
 import Loader from "../../components/Loader/Loader";
@@ -9,9 +9,6 @@ const getMovieDetails = async (movieId) => {
   return response.data;
 };
 
-const MovieCast = lazy(() => import("../../components/MovieCast/MovieCast"));
-const MovieReviews = lazy(() => import("../../components/MovieReviews/MovieReviews"));
-
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const location = useLocation();
@@ -20,6 +17,9 @@ const MovieDetailsPage = () => {
   const [error, setError] = useState(null);
 
   const backLinkLocation = useRef(location.state?.from || '/movies');
+
+  const castMatch = useMatch("/movies/:movieId/cast");
+  const reviewsMatch = useMatch("/movies/:movieId/reviews");
 
   useEffect(() => {
     if (!movieId) return;
@@ -82,27 +82,28 @@ const MovieDetailsPage = () => {
 
           <div className={css.navContainer}>
             <NavLink
-              to="cast"
+              to={castMatch ? "" : "cast"}
               className={({ isActive }) =>
-                isActive ? `${css.navLink} ${css.navLinkActive}` : `${css.navLink} ${css.navLinkInactive}`
+                isActive
+                  ? `${css.navLink} ${css.navLinkActive}`
+                  : `${css.navLink} ${css.navLinkInactive}`
               }
             >
               Акторський склад
             </NavLink>
             <NavLink
-              to="reviews"
+              to={reviewsMatch ? "" : "reviews"}
               className={({ isActive }) =>
-                isActive ? `${css.navLink} ${css.navLinkActive}` : `${css.navLink} ${css.navLinkInactive}`
+                isActive
+                  ? `${css.navLink} ${css.navLinkActive}`
+                  : `${css.navLink} ${css.navLinkInactive}`
               }
             >
               Відгуки
             </NavLink>
           </div>
           <Suspense fallback={<Loader />}>
-            <Routes>
-                <Route path="cast" element={<MovieCast />} />
-                <Route path="reviews" element={<MovieReviews />} />
-            </Routes>
+            <Outlet />
           </Suspense>
         </div>
       </div>

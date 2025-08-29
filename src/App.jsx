@@ -29,7 +29,7 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 const App = () => {
   return (
-    <div className="bg-gray-900 min-h-screen">
+    <div>
       <Navigation />
       <Suspense fallback={<Loader />}>
         <Routes>
